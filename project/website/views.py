@@ -350,7 +350,7 @@ def send_email(random_adr):
 
             json.dump(user_bus_dict, out_file, indent = 6)
     
-    
+    mail(email,name,destination)
     return render_template("send_ticket.html", user= current_user,paid=paid)
 
 @views.route('/MyBookings/', methods=['GET', 'POST'])
