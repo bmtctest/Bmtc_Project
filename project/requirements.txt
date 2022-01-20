@@ -1,0 +1,12 @@
+beautifulsoup4==4.10.0
+cryptography==36.0.1
+Flask==1.1.2
+Flask_Login==0.5.0
+Flask_SQLAlchemy==2.5.1
+pypng==0.0.21
+PyQRCode==1.2.1
+qrcode==7.3.1
+requests==2.26.0
+SQLAlchemy==1.1.18
+Werkzeug==1.0.1
+pillow

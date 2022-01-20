@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block title %}Registration{% endblock %} {% block content %}
+<h1>Wohooo looks like i have a friend!</h1>
+<form method="POST">
+    <h3 align="center">Registration</h3>
+    <div class="form-group">
+        <!-- taking first name as input -->
+        <label for="FirstName">First Name</label>
+        <input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="Enter First name">
+    </div>
+
+    <!-- taking last name as input -->
+    <div class="form-group">
+        <label for="LastName">Last Name</label>
+        <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Enter Last name">
+
+    </div>
+    <!-- taking phone number as input -->
+    <div>
+        <label for="PhoneNumber">Phone Number</label>
+        <input type="number" class="form-control" id="PhoneNumber" name="PhoneNumber" placeholder="Enter Phone Number">
+    </div>
+    <!-- taking password as input -->
+    <div>
+        <label for="Password">Password</label>
+        <input type="password" class="form-control" id="Password" name="Password" placeholder="Enter Password">
+
+    </div>
+    <!-- taking password again to confirm as input -->
+    <div>
+        <label for="PasswordAgain">Password (Confirm)</label>
+        <input type="password" class="form-control" id="PasswordAgain" name="PasswordAgain" placeholder="Confirm Password"> </div>
+    <br>
+    <!--  submit button -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

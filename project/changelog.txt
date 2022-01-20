@@ -1,0 +1,10 @@
+made minor changes, gotta come up with a way to del the code,
+checking for the availability of seats in a bus(implemented in views.py),
+dynamic urls for the same(implemented in views.py)
+REQUIRES A FRICKING LOGIN FINALLY(implemented in views.py,auth.py)
+FINALLY LOGS A JOURNEY IN A JSON ACCORDINGLY(implemented in views.py)
+anddddddddddddd it sends the mail to the user(implemented in views.py)
+shows the tickets 
+works on every machine by using the cwd method
+
+###########STABLE#############
