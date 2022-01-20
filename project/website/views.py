@@ -277,7 +277,7 @@ def pay(random_adr,uid,user):
                 now = dt.now().time().strftime("%Y-%m-%d%H-%M-%S")
                 peth = f"{number}{now}.png"
                 cwd = os.getcwd()            ###replace this with the filepath
-                dest = f"{cwd}/project/website/static/images/{peth}"
+                dest = f"{cwd}/website/static/images/{peth}"
                 
                 file = peth
                 
@@ -307,7 +307,7 @@ def send_email(random_adr):
     img=qrcode.make(s)
     name = uid
     cwd = os.getcwd()            ###replace this with the filepath
-    destination = f"{cwd}/project/website/static/tickets/{name}.png"
+    destination = f"{cwd}/website/static/tickets/{name}.png"
     img.save(destination)
     
     #to commit to database, use only if rquired in future
