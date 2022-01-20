@@ -380,7 +380,10 @@ def Bookings():
         
     except json.decoder.JSONDecodeError:
         flash("You have No Bookings",category="error")
-        
+    except FileNotFoundError:
+        flash("You seem have No Bookings",category="error")
+    except:
+        flash("An error occurred and has been reported",category="error")
     return render_template("bookings.html", user= current_user)
         
     
