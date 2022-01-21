@@ -332,14 +332,15 @@ def send_email(random_adr):
         f = open("user_bus_dict.json")
         user_bus_dict = json.load(f)
         f.close()
-        user_bus_dict.update({id:list_obj})
+        user_bus_dict.update({id:list_obj_1})
         dump = True
     except json.JSONDecodeError:
         f = open("user_bus_dict.json")
         user_bus_dict={id:list_obj}
+        f.close()
         dump = True
     except FileNotFoundError:
-        f = open("user_bus_dict.json")
+        
         user_bus_dict={id:list_obj_1}
         with open("user_bus_dict.json","w+") as out_file:
 
@@ -353,7 +354,7 @@ def send_email(random_adr):
             f.write(str(e))
         
     if dump == True:
-        with open("user_bus_dict.json") as out_file:
+        with open("user_bus_dict.json","w+") as out_file:
 
             json.dump(user_bus_dict, out_file, indent = 6)
     
