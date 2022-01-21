@@ -318,7 +318,7 @@ def send_email(random_adr):
     # flash(f"{new_Note.Travel_id},{uid}",category="success")
     id = str(current_user.id)
     user_bus_dict= {}
-    list_obj = [{"Bus_num":Bus_num,"uid":uid,"from_loc":from_loc_fin,"to":to_fin,"user_id":id}]
+    list_obj = {"Bus_num":Bus_num,"uid":uid,"from_loc":from_loc_fin,"to":to_fin,"user_id":id}
     list_obj_1 = {"Bus_num":Bus_num,"uid":uid,"from_loc":from_loc_fin,"to":to_fin,"user_id":id}
     try:
         f = open("user_bus_dict.json")
