@@ -319,7 +319,7 @@ def send_email(random_adr):
     id = str(current_user.id)
     user_bus_dict= {}
     list_obj = {"Bus_num":Bus_num,"uid":uid,"from_loc":from_loc_fin,"to":to_fin,"user_id":id}
-    list_obj_1 = {"Bus_num":Bus_num,"uid":uid,"from_loc":from_loc_fin,"to":to_fin,"user_id":id}
+    list_obj_1 = [{"Bus_num":Bus_num,"uid":uid,"from_loc":from_loc_fin,"to":to_fin,"user_id":id}]
     try:
         f = open("user_bus_dict.json")
         user_bus_dict = json.load(f)
@@ -332,12 +332,19 @@ def send_email(random_adr):
         f = open("user_bus_dict.json")
         user_bus_dict = json.load(f)
         f.close()
-        user_bus_dict.update({id:list_obj_1})
+        user_bus_dict.update({id:list_obj})
         dump = True
     except json.JSONDecodeError:
         f = open("user_bus_dict.json")
         user_bus_dict={id:list_obj}
         dump = True
+    except FileNotFoundError:
+        f = open("user_bus_dict.json")
+        user_bus_dict={id:list_obj_1}
+        with open("user_bus_dict.json","w+") as out_file:
+
+            json.dump(user_bus_dict, out_file, indent = 6)
+        dump = False
     except Exception as e:
         flash("There was a problem which is yet to be rectified, I have notified the Team and they shall fix this ASAP",category="error")
         flash("Inconvinience is regretted",category="error")
