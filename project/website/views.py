@@ -321,7 +321,7 @@ def send_email(random_adr):
     list_obj = [{"Bus_num":Bus_num,"uid":uid,"from_loc":from_loc_fin,"to":to_fin,"user_id":id}]
     list_obj_1 = {"Bus_num":Bus_num,"uid":uid,"from_loc":from_loc_fin,"to":to_fin,"user_id":id}
     try:
-        f = open("user_bus_dict.json","w+")
+        f = open("user_bus_dict.json")
         user_bus_dict = json.load(f)
         f.close()
         emp = user_bus_dict[id]
@@ -329,13 +329,13 @@ def send_email(random_adr):
         emp.append(list_obj)
         dump = True
     except KeyError:
-        f = open("user_bus_dict.json","w+")
+        f = open("user_bus_dict.json")
         user_bus_dict = json.load(f)
         f.close()
         user_bus_dict.update({id:list_obj_1})
         dump = True
     except json.JSONDecodeError:
-        f = open("user_bus_dict.json","w+")
+        f = open("user_bus_dict.json")
         user_bus_dict={id:list_obj}
         dump = True
     except Exception as e:
@@ -346,7 +346,7 @@ def send_email(random_adr):
             f.write(str(e))
         
     if dump == True:
-        with open("user_bus_dict.json", "w+") as out_file:
+        with open("user_bus_dict.json") as out_file:
 
             json.dump(user_bus_dict, out_file, indent = 6)
     
@@ -358,7 +358,7 @@ def send_email(random_adr):
 def Bookings():
     try:
         user_bus_dict = {}
-        f = open("user_bus_dict.json","w+")
+        f = open("user_bus_dict.json")
         user_bus_dict = json.load(f)
         f.close()
         id = str(current_user.id)
