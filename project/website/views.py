@@ -60,7 +60,10 @@ def get_distance(a,b):
             lol = temp.index("kms")
         except:
             lol = temp.index("minutes")
-    y = lol-1
+    try:
+        y = lol-1
+    except:
+        y = "16"
     distance = temp[y]
     return distance
 
@@ -84,12 +87,12 @@ def chk_seats(list_obj, thing):
 
 def mail(to,file,filepath):
     smtp_server = "smtp.gmail.com"
-    sender_email = "noreply.bmtc.ticket@gmail.com" 
+    sender_email = "bmtc.ticket@gmail.com" 
     password = "project@123"
 
 
 
-    fromaddr = "noreply.bmtc.ticket@gmail.com"
+    fromaddr = "bmtc.ticket@gmail.com" 
     toaddr = to
 
     # instance of MIMEMultipart
